@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: fleeet-control
+upstream:
+    type: git
+    git:
+        commit: 6b7c5a6654ec1293a905fd8aad99ae8fb4b3f81b
+        repo: ssh://git@github.com/squaremo/fleeet
+        directory: /control/config
+        ref: main

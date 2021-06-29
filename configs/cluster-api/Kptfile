@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: cluster-api
+upstream:
+    type: git
+    git:
+        commit: e7d72f7f8fc4156784272d1816f322e6cd1a4e5f
+        repo: https://github.com/kubernetes-sigs/cluster-api
+        directory: /config/crd/bases
+        ref: master

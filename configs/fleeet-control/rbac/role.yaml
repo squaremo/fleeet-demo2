@@ -1,0 +1,118 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - cluster.x-k8s.io
+  resources:
+  - clusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - bootstrapmodules
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - bootstrapmodules/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - bootstrapmodules/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - modules
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - modules/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - modules/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - remoteassemblages
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - remoteassemblages/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - fleet.squaremo.dev
+  resources:
+  - remoteassemblages/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - kustomize.toolkit.fluxcd.io
+  resources:
+  - kustomizations
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - source.toolkit.fluxcd.io
+  resources:
+  - gitrepositories
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
