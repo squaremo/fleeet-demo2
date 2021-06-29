@@ -1,0 +1,34 @@
+---
+apiVersion: fleet.squaremo.dev/v1alpha1
+kind: BootstrapModule
+metadata:
+  name: flux-components
+spec:
+    selector:
+      matchLabels: {}
+    sync:
+      source:
+        git:
+          url: https://github.com/squaremo/fleeet-demo2
+          version:
+            revision: "c68a960b91fd94bad7ffa55b8d28a320b61df203"
+      package:
+        kustomize:
+          path: ./configs/flux-worker
+---
+apiVersion: fleet.squaremo.dev/v1alpha1
+kind: BootstrapModule
+metadata:
+  name: assemblage-controller
+spec:
+    selector:
+      matchLabels: {}
+    sync:
+      source:
+        git:
+          url: https://github.com/squaremo/fleeet-demo2
+          version:
+            revision: "c68a960b91fd94bad7ffa55b8d28a320b61df203"
+      package:
+        kustomize:
+          path: ./configs/fleeet-worker/default
